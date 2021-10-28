@@ -5,7 +5,7 @@
   "editor.fontSize": 14,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.hover.enabled": true,
+  "editor.hover.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.formatOnSave": false,
