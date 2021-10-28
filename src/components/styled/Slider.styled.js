@@ -4,7 +4,6 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
-    background-color: coral;
     position: relative;
 `;
 
@@ -25,4 +24,29 @@ export const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
+`;
+
+export const Wrapper = styled.div`
+    height: 100%;
+`;
+
+export const Slide = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+`;
+
+export const ImageContainer = styled.div`
+    flex: 1;
+    height: 100%;
+`;
+
+export const Image = styled.img`
+    height: 80%;
+`;
+
+export const InfoContainer = styled.div`
+    flex: 1;
+    padding: 50px;
 `;
