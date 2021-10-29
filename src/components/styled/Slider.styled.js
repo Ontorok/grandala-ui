@@ -5,6 +5,7 @@ export const Container = styled.div`
     height: 100vh;
     display: flex;
     position: relative;
+    overflow: hidden;
 `;
 
 export const Arrow = styled.div`
@@ -36,6 +37,7 @@ export const Slide = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-color: #${(props) => props.bgColor};
 `;
 
 export const ImageContainer = styled.div`

@@ -22,7 +22,7 @@ const Slider = () => (
         </Arrow>
 
         <Wrapper>
-            <Slide>
+            <Slide bgColor='F9FCF2'>
                 <ImageContainer>
                     <Image src={sliderImage} />
                 </ImageContainer>
@@ -34,7 +34,7 @@ const Slider = () => (
                     <Button>SHOP NOW</Button>
                 </InfoContainer>
             </Slide>
-            <Slide>
+            <Slide bgColor='ECFDF6'>
                 <ImageContainer>
                     <Image src={sliderImage2} />
                 </ImageContainer>
