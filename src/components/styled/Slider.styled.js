@@ -28,6 +28,7 @@ export const Arrow = styled.div`
 
 export const Wrapper = styled.div`
     height: 100%;
+    display: flex;
 `;
 
 export const Slide = styled.div`
@@ -49,4 +50,20 @@ export const Image = styled.img`
 export const InfoContainer = styled.div`
     flex: 1;
     padding: 50px;
+`;
+
+export const Title = styled.h1`
+    font-size: 70px;
+`;
+export const Description = styled.p`
+    margin: 50px 0;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+`;
+export const Button = styled.button`
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
 `;
