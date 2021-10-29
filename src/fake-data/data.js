@@ -24,3 +24,13 @@ export const sliderItems = [
     bgColor: "FFEED7"
   }
 ];
+
+export const categories = [
+  { id: 1, img: "/images/shirt.jpg", title: "SHIRT STYLE" },
+  {
+    id: 2,
+    img: "/images/loungewere.jpg",
+    title: "LOUNGEWEAR LOVE"
+  },
+  { id: 3, img: "/images/jacket.jpg", title: "LIGHT JACKETS" }
+];
