@@ -7,5 +7,6 @@
     "source.organizeImports": true
   },
   "javascript.validate.enable": false,
-  "typescript.validate.enable": false
+  "typescript.validate.enable": false,
+  "workbench.colorTheme": "Learn with Sumit - Blue Velvet"
 }
