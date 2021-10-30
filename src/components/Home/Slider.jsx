@@ -24,6 +24,10 @@ const Slider = () => {
       setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
     }
   };
+
+  setTimeout(() => {
+    onSlideChange("right");
+  }, 5000);
   return (
     <Container>
       <Arrow direction="left" onClick={() => onSlideChange("left")}>

@@ -25,14 +25,16 @@ export const sliderItems = [
   }
 ];
 
+
+
 export const categories = [
-  { id: 1, img: "/images/categories/shirt.jpg", title: "SHIRT STYLE" },
+  { id: 1, img: "https://i.ibb.co/2vwkzwt/jacket.jpg", title: "SHIRT STYLE" },
   {
     id: 2,
-    img: "/images/categories/loungewere.jpg",
+    img: "https://i.ibb.co/PrjPKns/loungewere.jpg",
     title: "LOUNGEWEAR LOVE"
   },
-  { id: 3, img: "/images/categories/jacket.jpg", title: "LIGHT JACKETS" }
+  { id: 3, img: "https://i.ibb.co/bJmS5WJ/shirt.jpg", title: "LIGHT JACKETS" }
 ];
 
 export const popularProducts = [
