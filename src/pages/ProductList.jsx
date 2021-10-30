@@ -1,38 +1,18 @@
 import React from "react";
-import styled from "styled-components";
 import Announcement from "../components/Common/Announcement";
 import Footer from "../components/Common/Footer";
 import Navbar from "../components/Common/Navbar";
 import Newsletter from "../components/Common/Newsletter";
 import Products from "../components/Home/Products";
-
-const Container = styled.div``;
-
-const Title = styled.h1`
-  margin: 20px;
-`;
-
-const FilterContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Filter = styled.div`
-  margin: 20px;
-`;
-
-const FilterText = styled.span`
-  font-size: 20px;
-  font-weight: 600;
-  margin-right: 20px;
-`;
-
-const Select = styled.select`
-  padding: 10px;
-  margin-right: 20px;
-`;
-
-const Option = styled.option``;
+import {
+  Container,
+  Filter,
+  FilterContainer,
+  FilterText,
+  Option,
+  Select,
+  Title
+} from "../styled/ProductList.styled";
 
 const ProductList = () => {
   return (
