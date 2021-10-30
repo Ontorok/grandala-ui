@@ -7,7 +7,7 @@ import {
   Input,
   InputContainer,
   Title
-} from "./styled/Newsletter.styled";
+} from "../../styled/Home/Newsletter.styled";
 
 const Newsletter = () => {
   return (

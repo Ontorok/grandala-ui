@@ -1,7 +1,7 @@
 import React from "react";
-import { categories } from "../fake-data/data";
+import { categories } from "../../fake-data/data";
+import { Container } from "../../styled/Home/Categories.styled";
 import CategoryItem from "./CategoryItem";
-import { Container } from "./styled/Categories.styled";
 
 const Categories = () => {
   return (

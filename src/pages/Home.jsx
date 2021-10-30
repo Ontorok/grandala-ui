@@ -1,11 +1,11 @@
 import React from "react";
-import Announcement from "../components/Announcement";
-import Categories from "../components/Categories";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Newsletter from "../components/Newsletter";
-import Products from "../components/Products";
-import Slider from "../components/Slider";
+import Announcement from "../components/Home/Announcement";
+import Categories from "../components/Home/Categories";
+import Footer from "../components/Home/Footer";
+import Navbar from "../components/Home/Navbar";
+import Newsletter from "../components/Home/Newsletter";
+import Products from "../components/Home/Products";
+import Slider from "../components/Home/Slider";
 
 const Home = () => (
   <div>

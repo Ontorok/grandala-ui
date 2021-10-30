@@ -4,7 +4,13 @@ import {
   ShoppingCartOutlined
 } from "@mui/icons-material";
 import React from "react";
-import { Circle, Container, Icon, Image, Info } from "./styled/Product.styled";
+import {
+  Circle,
+  Container,
+  Icon,
+  Image,
+  Info
+} from "../../styled/Home/Product.styled";
 
 const Product = ({ item }) => {
   return (

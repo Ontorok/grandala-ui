@@ -5,7 +5,7 @@ import {
   Image,
   Info,
   Title
-} from "./styled/CategoryItem.styled";
+} from "../../styled/Home/CategoryItem.styled";
 
 const CategoryItem = ({ item }) => {
   return (

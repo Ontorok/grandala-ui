@@ -40,8 +40,45 @@ export const SocialIcon = styled.div`
 
 
 export const Center = styled.div`
-    flex: 1
+    flex: 1;
+    padding: 20px;
 `;
+
+export const Title = styled.h3`
+    margin-bottom: 30px;
+`;
+
+export const List = styled.ul`
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+`;
+
+export const ListItem = styled.li`
+    width: 50%;
+    margin-bottom: 10px;
+`
+
 export const Right = styled.div`
-    flex: 1
+    flex: 1;
+    padding: 20px;
 `;
+
+export const ContactItem = styled.div`
+    argin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+`;
+
+export const ContactItemDesc = styled.span`
+    margin-left: 10px;
+`;
+
+export const Payment = styled.img`
+   margin-top: 10px;
+`;
+
+
