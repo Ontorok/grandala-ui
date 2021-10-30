@@ -81,7 +81,7 @@ const Footer = () => {
           <MailOutline />
           <ContactItemDesc>nasir@mail.com</ContactItemDesc>
         </ContactItem>
-        <Payment src="/images/payment.png" />
+        <Payment src="https://i.ibb.co/2j4zR8W/payment.png" />
       </Right>
     </Container>
   );
