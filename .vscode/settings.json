@@ -8,5 +8,6 @@
   },
   "javascript.validate.enable": false,
   "typescript.validate.enable": false,
-  "workbench.colorTheme": "Learn with Sumit - Blue Velvet"
+  "workbench.colorTheme": "Learn with Sumit - Blue Velvet",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
