@@ -1,11 +1,22 @@
+import { Add, Remove } from "@mui/icons-material";
 import React from "react";
-import styled from "styled-components";
 import Announcement from "../components/Common/Announcement";
 import Footer from "../components/Common/Footer";
 import Navbar from "../components/Common/Navbar";
 import Newsletter from "../components/Common/Newsletter";
 import {
+  AddContainer,
+  Amount,
+  AmountContainer,
+  Button,
+  Container,
   Description,
+  FilerContainer,
+  Filter,
+  FilterColor,
+  FilterSize,
+  FilterSizeOption,
+  FilterTitle,
   Image,
   ImageContainer,
   InfoCotainer,
@@ -13,8 +24,6 @@ import {
   Title,
   Wrapper
 } from "../styled/ProductDetails.styled";
-
-const Container = styled.div``;
 
 const ProductDetails = () => {
   return (
@@ -36,6 +45,32 @@ const ProductDetails = () => {
             minima consequuntur officiis dolore vero sequi veritatis magnam!
           </Description>
           <Price>$ 20</Price>
+          <FilerContainer>
+            <Filter>
+              <FilterTitle>Color</FilterTitle>
+              <FilterColor color="black" />
+              <FilterColor color="darkblue" />
+              <FilterColor color="grey" />
+            </Filter>
+            <Filter>
+              <FilterTitle>Size</FilterTitle>
+              <FilterSize>
+                <FilterSizeOption>XS</FilterSizeOption>
+                <FilterSizeOption>S</FilterSizeOption>
+                <FilterSizeOption>M</FilterSizeOption>
+                <FilterSizeOption>L</FilterSizeOption>
+                <FilterSizeOption>XL</FilterSizeOption>
+              </FilterSize>
+            </Filter>
+          </FilerContainer>
+          <AddContainer>
+            <AmountContainer>
+              <Remove />
+              <Amount>1</Amount>
+              <Add />
+            </AmountContainer>
+            <Button>ADD TO CART</Button>
+          </AddContainer>
         </InfoCotainer>
       </Wrapper>
       <Newsletter />
