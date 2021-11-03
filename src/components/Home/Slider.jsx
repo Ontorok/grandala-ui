@@ -28,6 +28,7 @@ const Slider = () => {
   setTimeout(() => {
     onSlideChange("right");
   }, 5000);
+
   return (
     <Container>
       <Arrow direction="left" onClick={() => onSlideChange("left")}>

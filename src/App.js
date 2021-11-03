@@ -1,9 +1,9 @@
-import ProductDetails from "./pages/ProductDetails";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <div>
-      <ProductDetails />
+      <Home />
     </div>
   );
 }
