@@ -1,9 +1,9 @@
-import ProductDetails from "./pages/ProductDetails";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
     <div>
-      <ProductDetails />
+      <Register />
     </div>
   );
 }
