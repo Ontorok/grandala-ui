@@ -9,6 +9,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5)
     ),
     url("https://i.ibb.co/F3vzpbt/landback.jpg") center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,40 +1,43 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 60px;
+  height: 60px;
 `;
 
 export const Wrapper = styled.div`
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 /* **************************************************************
  *                    Left Side of Navbar (Start)
  ************************************************************** */
 
 export const Left = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
 `;
 
 export const SearchContainer = styled.div`
-    border: 0.5px solid lightgray;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
-    border-radius: 5px;
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  &:focus {
+    width: 50%;
+  }
 `;
 
 export const Input = styled.input`
-    border: none;
+  border: none;
 `;
 export const Language = styled.span`
-    font-size: 14px;
-    cursor: pointer;
+  font-size: 14px;
+  cursor: pointer;
 `;
 /* **************************************************************
  *                    Left Side of Navbar (End)
@@ -44,11 +47,11 @@ export const Language = styled.span`
  *                    Center Side of Navbar (Start)
  ************************************************************** */
 export const Center = styled.div`
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 `;
 export const Logo = styled.h1`
-    font-weight: bold;
+  font-weight: bold;
 `;
 /* **************************************************************
  *                    Center Side of Navbar (End)
@@ -58,16 +61,16 @@ export const Logo = styled.h1`
  *                    Right Side of Navbar (Start)
  ************************************************************** */
 export const Right = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 export const MenuItem = styled.div`
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
 `;
 /* **************************************************************
  *                    Right Side of Navbar (End)
