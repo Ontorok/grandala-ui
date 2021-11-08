@@ -33,8 +33,24 @@ export const SearchContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  border: none;
+  width: 100px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url(${(props) => props.imgurl});
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 10px 12px 10px 40px;
+  margin-left: 10px;
+  transition: 0.5s all ease;
+
+  &:focus {
+    width: 100%;
+  }
 `;
+
 export const Language = styled.span`
   font-size: 14px;
   cursor: pointer;

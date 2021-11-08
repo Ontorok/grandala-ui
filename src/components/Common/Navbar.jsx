@@ -1,4 +1,4 @@
-import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import { ShoppingCartOutlined } from "@mui/icons-material";
 import { Badge } from "@mui/material";
 import React from "react";
 import {
@@ -10,7 +10,6 @@ import {
   Logo,
   MenuItem,
   Right,
-  SearchContainer,
   Wrapper
 } from "../../styled/Common/Navbar.styled";
 
@@ -19,10 +18,10 @@ const Navbar = () => (
     <Wrapper>
       <Left>
         <Language>EN</Language>
-        <SearchContainer>
-          <Input />
-          <Search style={{ color: "gray", fontSize: 16 }} />
-        </SearchContainer>
+        {/* <SearchContainer> */}
+        <Input imgurl="https://i.ibb.co/jh75D6m/search-Icon.png" />
+        {/* <Search style={{ color: "gray", fontSize: 16 }} /> */}
+        {/* </SearchContainer> */}
       </Left>
       <Center>
         <Logo>DIGI SHOP.</Logo>

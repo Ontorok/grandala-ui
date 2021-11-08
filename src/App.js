@@ -1,9 +1,9 @@
-import Register from "./pages/Register";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <div>
-      <Register />
+      <Home />
     </div>
   );
 }
