@@ -17,7 +17,7 @@ export const Info = styled.div`
 `;
 
 export const Container = styled.div`
-  /* flex: 1;
+  flex: 1;
   margin: 5px;
   max-width: 280px;
   height: 300px;
@@ -28,8 +28,8 @@ export const Container = styled.div`
   position: relative;
   &:hover ${Info}{
     opacity: 1
-  } */
-  flex: 1;
+  }
+  /* flex: 1;
   margin: 5px;
   max-width: 300px;
   min-width: 280px;
@@ -41,7 +41,7 @@ export const Container = styled.div`
   position: relative;
   &:hover ${Info} {
     opacity: 1;
-  }
+  } */
 `;
 
 export const Circle = styled.div`
