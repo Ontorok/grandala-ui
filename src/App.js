@@ -1,4 +1,4 @@
-import Item from "./pages/ProductList";
+import Item from "./pages/ProductDetails";
 
 export default function App() {
   return (

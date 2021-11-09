@@ -1,26 +1,39 @@
 import styled from "styled-components";
+import { devices } from "../mediaQuery/devices";
 
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+
+  @media ${devices.mobileM} {
+    padding: 10px;
+    flex-direction: column;
+  }
 `;
 
 export const ImageContainer = styled.div`
   flex: 1;
-  padding: 0 50px;
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+
+  @media ${devices.mobileM} {
+    height: 40vh;
+  }
 `;
 
 export const InfoCotainer = styled.div`
   flex: 1;
   padding: 0 50px;
+
+  @media ${devices.mobileM} {
+    padding: 10px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -41,6 +54,10 @@ export const FilerContainer = styled.div`
   justify-content: space-between;
   width: 50%;
   margin: 30px 0;
+
+  @media ${devices.mobileM} {
+    width: 100%;
+  }
 `;
 
 export const Filter = styled.div`
@@ -74,6 +91,10 @@ export const AddContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 50%;
+
+  @media ${devices.mobileM} {
+    width: 100%;
+  }
 `;
 export const AmountContainer = styled.div`
   display: flex;
