@@ -6,12 +6,12 @@ export const Info = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.2);
-  z-index:3;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0; 
+  opacity: 0;
   transition: all 0.5s ease;
   cursor: pointer;
 `;
@@ -19,19 +19,6 @@ export const Info = styled.div`
 export const Container = styled.div`
   flex: 1;
   margin: 5px;
-  max-width: 280px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5fbfd;
-  position: relative;
-  &:hover ${Info}{
-    opacity: 1
-  }
-  /* flex: 1;
-  margin: 5px;
-  max-width: 300px;
   min-width: 280px;
   height: 300px;
   display: flex;
@@ -41,7 +28,7 @@ export const Container = styled.div`
   position: relative;
   &:hover ${Info} {
     opacity: 1;
-  } */
+  }
 `;
 
 export const Circle = styled.div`
@@ -53,12 +40,10 @@ export const Circle = styled.div`
 `;
 
 export const Image = styled.img`
-  height:75%;
+  height: 75%;
   width: 75%;
   z-index: 2;
 `;
-
-
 
 export const Icon = styled.div`
   width: 40px;
@@ -68,11 +53,10 @@ export const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin:10px;
+  margin: 10px;
   transition: all 0.5s ease;
-  &:hover{
+  &:hover {
     background-color: #e9f5fb;
     transform: scale(1.1);
-    
   }
 `;
