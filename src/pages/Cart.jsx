@@ -48,7 +48,7 @@ const Bottom = styled.div`
 
 const Info = styled.div`
   flex: 3;
-  background-color: rgba(207, 236, 247, 0.3);
+  //background-color: rgba(207, 236, 247, 0.3);
 `;
 
 const Product = styled.div`
@@ -123,7 +123,35 @@ const ProductPrice = styled.span`
 
 const Summary = styled.div`
   flex: 1;
-  background-color: #e7e0cf;
+  border: 0.5px solid lightgrey;
+  //background-color: rgba(231, 224, 207, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  height: 50vh;
+`;
+
+const SummaryTitle = styled.h1`
+  font-weight: 200;
+`;
+
+const SummaryItem = styled.div`
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "24px"};
+`;
+
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const Button = styled.button`
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
 `;
 
 const Cart = () => {
@@ -195,7 +223,26 @@ const Cart = () => {
               </PriceDetail>
             </Product>
           </Info>
-          <Summary>Summary</Summary>
+          <Summary>
+            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>$ 80</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>$ 10.5</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>$ 5.5</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$ 85</SummaryItemPrice>
+            </SummaryItem>
+            <Button>CHECKOUT NOW</Button>
+          </Summary>
         </Bottom>
       </Wrapper>
       <Footer />
