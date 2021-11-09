@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   flex: 1;
@@ -10,6 +11,10 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @media ${devices.mobileM} {
+    height: 20vh;
+  }
 `;
 export const Info = styled.div`
   position: absolute;
