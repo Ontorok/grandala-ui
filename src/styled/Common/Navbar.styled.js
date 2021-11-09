@@ -67,6 +67,8 @@ export const Center = styled.div`
 `;
 export const Logo = styled.h1`
   font-weight: bold;
+  cursor: pointer;
+
   @media ${devices.mobileM} {
     font-size: 15px;
   }

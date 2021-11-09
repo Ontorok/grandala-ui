@@ -4,11 +4,16 @@ import styled from "styled-components";
 import Announcement from "../components/Common/Announcement";
 import Footer from "../components/Common/Footer";
 import Navbar from "../components/Common/Navbar";
+import { devices } from "../mediaQuery/devices";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
+
+  @media ${devices.mobileM} {
+    padding: 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -33,7 +38,11 @@ const TopButton = styled.button`
   color: ${(props) => props.btnType === "filled" && "white"};
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  @media ${devices.mobileM} {
+    display: none;
+  }
+`;
 
 const TopText = styled.span`
   text-decoration: underline;
@@ -44,16 +53,23 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media ${devices.mobileM} {
+    flex-direction: column;
+  }
 `;
 
 const Info = styled.div`
   flex: 3;
-  //background-color: rgba(207, 236, 247, 0.3);
 `;
 
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media ${devices.mobileM} {
+    flex-direction: column;
+  }
 `;
 
 const Hr = styled.hr`
@@ -69,6 +85,10 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
+
+  @media ${devices.mobileM} {
+    width: 150px;
+  }
 `;
 
 const Detail = styled.div`
@@ -114,17 +134,24 @@ const ProductAmount = styled.span`
   justify-content: center;
   align-items: center;
   font-size: 24px;
+
+  @media ${devices.mobileM} {
+    margin: 5px 15px;
+  }
 `;
 
 const ProductPrice = styled.span`
   font-size: 30px;
   font-weight: 200;
+
+  @media ${devices.mobileM} {
+    margin-bottom: 2px;
+  }
 `;
 
 const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgrey;
-  //background-color: rgba(231, 224, 207, 0.2);
   padding: 20px;
   border-radius: 10px;
   height: 50vh;

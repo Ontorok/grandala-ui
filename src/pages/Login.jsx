@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
+import Navbar from "../components/Common/Navbar";
 import { devices } from "../mediaQuery/devices";
 
 const Container = styled.div`
@@ -64,18 +65,21 @@ const Link = styled.a`
 
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>FORGOT YOUR PASSWORD?</Link>
-          <Link>CREATE AN ACCOUNT</Link>
-        </Form>
-      </Wrapper>
-    </Container>
+    <Fragment>
+      <Navbar />
+      <Container>
+        <Wrapper>
+          <Title>SIGN IN</Title>
+          <Form>
+            <Input placeholder="username" />
+            <Input placeholder="password" />
+            <Button>LOGIN</Button>
+            <Link>FORGOT YOUR PASSWORD?</Link>
+            <Link>CREATE AN ACCOUNT</Link>
+          </Form>
+        </Wrapper>
+      </Container>
+    </Fragment>
   );
 };
 

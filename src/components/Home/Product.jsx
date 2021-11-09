@@ -4,6 +4,7 @@ import {
   ShoppingCartOutlined
 } from "@mui/icons-material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Circle,
   Container,
@@ -13,6 +14,7 @@ import {
 } from "../../styled/Home/Product.styled";
 
 const Product = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Circle />
@@ -21,7 +23,7 @@ const Product = ({ item }) => {
         <Icon>
           <ShoppingCartOutlined />
         </Icon>
-        <Icon>
+        <Icon onClick={() => navigate("/product-detail")}>
           <SearchOutlined />
         </Icon>
         <Icon>
