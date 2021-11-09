@@ -1,9 +1,9 @@
-import Cart from "./pages/Home";
+import Item from "./pages/ProductList";
 
 export default function App() {
   return (
     <div>
-      <Cart />
+      <Item />
     </div>
   );
 }

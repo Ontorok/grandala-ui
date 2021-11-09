@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { devices } from "../mediaQuery/devices";
 
 const Container = styled.div`
   width: 100vw;
@@ -20,6 +21,10 @@ const Wrapper = styled.div`
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
+
+  @media ${devices.mobileM} {
+    width: 75%;
+  }
 `;
 
 const Title = styled.h1`
