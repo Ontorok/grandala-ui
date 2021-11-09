@@ -27,28 +27,11 @@ export const SearchContainer = styled.div`
   margin-left: 25px;
   padding: 5px;
   border-radius: 5px;
-  &:focus {
-    width: 50%;
-  }
 `;
 
 export const Input = styled.input`
-  width: 100px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url(${(props) => props.imgurl});
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 10px 12px 10px 40px;
-  margin-left: 10px;
-  transition: 0.5s all ease;
+  border:none
 
-  &:focus {
-    width: 100%;
-  }
 `;
 
 export const Language = styled.span`
