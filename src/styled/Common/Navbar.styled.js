@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   height: 60px;
+
+  @media ${devices.mobileM} {
+    height: 50px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -9,6 +14,10 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${devices.mobileM} {
+    padding: 10px 0;
+  }
 `;
 /* **************************************************************
  *                    Left Side of Navbar (Start)
@@ -30,13 +39,20 @@ export const SearchContainer = styled.div`
 `;
 
 export const Input = styled.input`
-  border:none
+  border: none;
 
+  @media ${devices.mobileM} {
+    width: 50px;
+  }
 `;
 
 export const Language = styled.span`
   font-size: 14px;
   cursor: pointer;
+
+  @media ${devices.mobileM} {
+    display: none;
+  }
 `;
 /* **************************************************************
  *                    Left Side of Navbar (End)
@@ -51,6 +67,9 @@ export const Center = styled.div`
 `;
 export const Logo = styled.h1`
   font-weight: bold;
+  @media ${devices.mobileM} {
+    font-size: 15px;
+  }
 `;
 /* **************************************************************
  *                    Center Side of Navbar (End)
@@ -64,12 +83,22 @@ export const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media ${devices.mobileM} {
+    justify-content: center;
+    flex: 2;
+  }
 `;
 
 export const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+
+  @media ${devices.mobileM} {
+    font-size: 12px;
+    margin-left: 10px;
+  }
 `;
 /* **************************************************************
  *                    Right Side of Navbar (End)

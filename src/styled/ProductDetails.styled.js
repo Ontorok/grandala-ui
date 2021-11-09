@@ -37,7 +37,7 @@ export const Price = styled.span`
 `;
 
 export const FilerContainer = styled.div`
-  display:flex;
+  display: flex;
   justify-content: space-between;
   width: 50%;
   margin: 30px 0;
@@ -57,14 +57,14 @@ export const FilterColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
   margin: 0 5px;
   cursor: pointer;
 `;
 
 export const FilterSize = styled.select`
   margin-left: 10px;
-  padding: 5px
+  padding: 5px;
 `;
 
 export const FilterSizeOption = styled.option``;
@@ -73,7 +73,7 @@ export const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 50%
+  width: 50%;
 `;
 export const AmountContainer = styled.div`
   display: flex;
@@ -96,7 +96,7 @@ export const Button = styled.div`
   background-color: #fff;
   cursor: pointer;
   font-weight: 500;
-  &:hover{
-    background-color: #f8f4f4
+  &:hover {
+    background-color: #f8f4f4;
   }
 `;
