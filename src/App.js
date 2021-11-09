@@ -1,9 +1,9 @@
-import Register from "./pages/Register";
+import Cart from "./pages/Cart";
 
 export default function App() {
   return (
     <div>
-      <Register />
+      <Cart />
     </div>
   );
 }
