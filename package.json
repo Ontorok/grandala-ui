@@ -1,4 +1,6 @@
 {
+  "homepage": "http://Ontorok.github.io/shopping-cart-ui",
+  "name": "shopping-cart-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

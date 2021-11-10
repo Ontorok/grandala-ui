@@ -23,7 +23,7 @@ const Product = ({ item }) => {
         <Icon>
           <ShoppingCartOutlined />
         </Icon>
-        <Icon onClick={() => navigate("/product-detail")}>
+        <Icon onClick={() => navigate(`/product-detail/${item.name}`)}>
           <SearchOutlined />
         </Icon>
         <Icon>

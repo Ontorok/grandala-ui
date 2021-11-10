@@ -1,6 +1,6 @@
 import { Add, Remove } from "@mui/icons-material";
 import React from "react";
-import Announcement from "../components/Common/Announcement";
+import { useParams } from "react-router-dom";
 import Footer from "../components/Common/Footer";
 import Newsletter from "../components/Common/Newsletter";
 import {
@@ -25,15 +25,15 @@ import {
 } from "../styled/ProductDetails.styled";
 
 const ProductDetails = () => {
+  const param = useParams();
   return (
     <Container>
-      <Announcement />
       <Wrapper>
         <ImageContainer>
           <Image src="https://i.ibb.co/HV8jrKV/denimjumpsuit.jpg" />
         </ImageContainer>
         <InfoCotainer>
-          <Title>Denim Jumpsuit</Title>
+          <Title>{param.productName}</Title>
           <Description>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
             quam rem temporibus ea, laboriosam sit nobis quia illum quos
