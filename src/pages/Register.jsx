@@ -26,6 +26,9 @@ const Wrapper = styled.div`
   @media ${devices.mobileM} {
     width: 75%;
   }
+  @media ${devices.tablet} {
+    width: 75%;
+  }
 `;
 
 const Title = styled.h1`
