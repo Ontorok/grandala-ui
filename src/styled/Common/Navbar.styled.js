@@ -3,6 +3,7 @@ import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   height: 60px;
+  background-color:#eee;
 
   @media ${devices.mobileM} {
     height: 50px;
@@ -40,6 +41,7 @@ export const SearchContainer = styled.div`
 
 export const Input = styled.input`
   border: none;
+  background-color:inherit;
 
   @media ${devices.mobileM} {
     width: 50px;
