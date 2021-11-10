@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   @media ${devices.mobileM} {
     padding: 10px;
   }
+  @media ${devices.tablet} {
+    padding: 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -40,6 +43,9 @@ const TopTexts = styled.div`
   @media ${devices.mobileM} {
     display: none;
   }
+  @media ${devices.tablet} {
+    display: none;
+  }
 `;
 
 const TopText = styled.span`
@@ -55,6 +61,9 @@ const Bottom = styled.div`
   @media ${devices.mobileM} {
     flex-direction: column;
   }
+  @media ${devices.tablet} {
+    flex-direction: column;
+  }
 `;
 
 const Info = styled.div`
@@ -66,6 +75,9 @@ const Product = styled.div`
   justify-content: space-between;
 
   @media ${devices.mobileM} {
+    flex-direction: column;
+  }
+  @media ${devices.tablet} {
     flex-direction: column;
   }
 `;
@@ -85,6 +97,9 @@ const Image = styled.img`
   width: 200px;
 
   @media ${devices.mobileM} {
+    width: 150px;
+  }
+  @media ${devices.tablet} {
     width: 150px;
   }
 `;
@@ -136,6 +151,11 @@ const ProductAmount = styled.span`
   @media ${devices.mobileM} {
     margin: 5px 15px;
   }
+  @media ${devices.tablet} {
+    margin: 5px 25px;
+    width: 80px;
+    height: 40px;
+  }
 `;
 
 const ProductPrice = styled.span`
@@ -143,6 +163,9 @@ const ProductPrice = styled.span`
   font-weight: 200;
 
   @media ${devices.mobileM} {
+    margin-bottom: 2px;
+  }
+  @media ${devices.tablet} {
     margin-bottom: 2px;
   }
 `;
