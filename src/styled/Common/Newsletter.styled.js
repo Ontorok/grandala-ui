@@ -17,6 +17,9 @@ export const Title = styled.h1`
   @media ${devices.mobileM} {
     font-size: 50px;
   }
+  @media ${devices.tablet} {
+    font-size: 50px;
+  }
 `;
 
 export const Description = styled.div`
@@ -25,6 +28,9 @@ export const Description = styled.div`
   margin-bottom: 20px;
 
   @media ${devices.mobileM} {
+    text-align: center;
+  }
+  @media ${devices.tablet} {
     text-align: center;
   }
 `;
@@ -38,6 +44,9 @@ export const InputContainer = styled.div`
   border: 1px solid lightgray;
 
   @media ${devices.mobileM} {
+    width: 80%;
+  }
+  @media ${devices.tablet} {
     width: 80%;
   }
 `;

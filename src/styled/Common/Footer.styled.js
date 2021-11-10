@@ -3,9 +3,13 @@ import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   display: flex;
-  background-color:rgba(231, 224, 207, 0.2);
- 
+  background-color: rgba(231, 224, 207, 0.2);
+
   @media ${devices.mobileM} {
+    flex-direction: column;
+  }
+
+  @media ${devices.tablet} {
     flex-direction: column;
   }
 `;
@@ -76,6 +80,10 @@ export const Right = styled.div`
   padding: 20px;
 
   @media ${devices.mobileM} {
+    background-color: rgba(228, 240, 192, 0.2);
+  }
+
+  @media ${devices.tablet} {
     background-color: rgba(228, 240, 192, 0.2);
   }
 `;
