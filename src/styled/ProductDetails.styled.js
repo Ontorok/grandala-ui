@@ -11,6 +11,10 @@ export const Wrapper = styled.div`
     padding: 10px;
     flex-direction: column;
   }
+  @media ${devices.tablet} {
+    padding: 10px;
+    flex-direction: column;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -25,6 +29,9 @@ export const Image = styled.img`
   @media ${devices.mobileM} {
     height: 40vh;
   }
+  @media ${devices.tablet} {
+    height: 40vh;
+  }
 `;
 
 export const InfoCotainer = styled.div`
@@ -32,6 +39,9 @@ export const InfoCotainer = styled.div`
   padding: 0 50px;
 
   @media ${devices.mobileM} {
+    padding: 10px;
+  }
+  @media ${devices.tablet} {
     padding: 10px;
   }
 `;
@@ -56,6 +66,9 @@ export const FilerContainer = styled.div`
   margin: 30px 0;
 
   @media ${devices.mobileM} {
+    width: 100%;
+  }
+  @media ${devices.tablet} {
     width: 100%;
   }
 `;
@@ -93,6 +106,9 @@ export const AddContainer = styled.div`
   width: 50%;
 
   @media ${devices.mobileM} {
+    width: 100%;
+  }
+  @media ${devices.tablet} {
     width: 100%;
   }
 `;

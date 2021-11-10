@@ -10,4 +10,8 @@ export const Container = styled.div`
     padding: 0;
     flex-direction: column;
   }
+  @media ${devices.tablet} {
+    padding: 0;
+    flex-direction: column;
+  }
 `;

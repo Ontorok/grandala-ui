@@ -20,6 +20,11 @@ export const Filter = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media ${devices.tablet} {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const FilterText = styled.span`
@@ -30,6 +35,9 @@ export const FilterText = styled.span`
   @media ${devices.mobileM} {
     margin-right: 0;
   }
+  @media ${devices.tablet} {
+    margin-right: 0;
+  }
 `;
 
 export const Select = styled.select`
@@ -37,6 +45,9 @@ export const Select = styled.select`
   margin-right: 20px;
 
   @media ${devices.mobileM} {
+    margin: 10px 0px;
+  }
+  @media ${devices.tablet} {
     margin: 10px 0px;
   }
 `;
