@@ -129,7 +129,7 @@ export const MenuItem = styled.div`
     margin-left: 10px;
   }
 
-  @media ${devices.tabletNavbar Responsive for table size} {
+  @media ${devices.tablet} {
     font-size: 12px;
     margin-left: 10px;
   }

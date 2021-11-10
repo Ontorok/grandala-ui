@@ -14,13 +14,16 @@ export default function App() {
       <Announcement />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate to="/shopping-cart-ui" />} />
+        <Route path="/shopping-cart-ui" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/products" element={<ProductList />} />
-        <Route path="/product-detail/:productName" element={<ProductDetails />} />
+        <Route
+          path="/product-detail/:productName"
+          element={<ProductDetails />}
+        />
       </Routes>
     </div>
   );
