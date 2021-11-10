@@ -3,7 +3,7 @@ import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   height: 60px;
-  background-color:#eee;
+  background-color:rgba(231, 224, 207, 0.2);
 
   @media ${devices.mobileM} {
     height: 50px;

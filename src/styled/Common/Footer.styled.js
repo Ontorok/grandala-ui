@@ -3,7 +3,8 @@ import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   display: flex;
-
+  background-color:rgba(231, 224, 207, 0.2);
+ 
   @media ${devices.mobileM} {
     flex-direction: column;
   }
