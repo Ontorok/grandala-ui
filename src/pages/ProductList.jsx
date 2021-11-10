@@ -1,7 +1,6 @@
 import React from "react";
 import Announcement from "../components/Common/Announcement";
 import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
 import Newsletter from "../components/Common/Newsletter";
 import Products from "../components/Home/Products";
 import {
@@ -17,7 +16,6 @@ import {
 const ProductList = () => {
   return (
     <Container>
-      <Navbar />
       <Announcement />
       <Title>Dresses</Title>
       <FilterContainer>

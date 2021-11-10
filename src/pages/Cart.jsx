@@ -1,9 +1,7 @@
 import { Add, Remove } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
-import Announcement from "../components/Common/Announcement";
 import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
 import { devices } from "../mediaQuery/devices";
 
 const Container = styled.div``;
@@ -184,8 +182,6 @@ const Button = styled.button`
 const Cart = () => {
   return (
     <Container>
-      <Navbar />
-      <Announcement />
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>

@@ -32,9 +32,11 @@ const Navbar = () => {
           <Logo onClick={() => navigate("/")}>DIGI SHOP</Logo>
         </Center>
         <Right>
-          <MenuItem onClick={() => navigate("/register")}>REGISTER</MenuItem>
-          <MenuItem onClick={() => navigate("/login")}>LOG IN</MenuItem>
-          <MenuItem onClick={() => navigate("/cart")}>
+          <MenuItem onClick={() => navigate("register")}>REGISTER</MenuItem>
+          <MenuItem onClick={() => navigate("/shopping-cart-ui/login")}>
+            LOG IN
+          </MenuItem>
+          <MenuItem onClick={() => navigate("/shopping-cart-ui/cart")}>
             <Badge badgeContent={2} color="primary">
               <ShoppingCartOutlined />
             </Badge>

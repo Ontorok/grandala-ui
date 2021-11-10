@@ -2,7 +2,6 @@ import { Add, Remove } from "@mui/icons-material";
 import React from "react";
 import Announcement from "../components/Common/Announcement";
 import Footer from "../components/Common/Footer";
-import Navbar from "../components/Common/Navbar";
 import Newsletter from "../components/Common/Newsletter";
 import {
   AddContainer,
@@ -28,7 +27,6 @@ import {
 const ProductDetails = () => {
   return (
     <Container>
-      <Navbar />
       <Announcement />
       <Wrapper>
         <ImageContainer>

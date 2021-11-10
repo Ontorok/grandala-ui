@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import Navbar from "../components/Common/Navbar";
 import { devices } from "../mediaQuery/devices";
 
 const Container = styled.div`
@@ -63,7 +63,6 @@ const Button = styled.button`
 const Register = () => {
   return (
     <Fragment>
-      <Navbar />
       <Container>
         <Wrapper>
           <Title>CREATE AN ACCOUNT</Title>
@@ -82,6 +81,7 @@ const Register = () => {
           </Form>
         </Wrapper>
       </Container>
+      <Outlet />
     </Fragment>
   );
 };

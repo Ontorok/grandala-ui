@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import Navbar from "../components/Common/Navbar";
 import { devices } from "../mediaQuery/devices";
 
 const Container = styled.div`
@@ -66,7 +65,6 @@ const Link = styled.a`
 const Login = () => {
   return (
     <Fragment>
-      <Navbar />
       <Container>
         <Wrapper>
           <Title>SIGN IN</Title>
