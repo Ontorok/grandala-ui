@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media ${devices.mobileM} {
     display: none;
   }
+
+  @media ${devices.tablet} {
+    display: none;
+  }
 `;
 
 export const Arrow = styled.div`
