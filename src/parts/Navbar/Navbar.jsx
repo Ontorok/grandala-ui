@@ -17,7 +17,7 @@ import {
 
 const Navbar = () => {
   const navigate = useNavigate();
-  console.log(navigate);
+
   return (
     <Container>
       <Wrapper>
