@@ -1,5 +1,5 @@
+import { devices } from "mediaQuery/devices";
 import styled from "styled-components";
-import { devices } from "../../mediaQuery/devices";
 
 export const Container = styled.div`
   height: 60vh;

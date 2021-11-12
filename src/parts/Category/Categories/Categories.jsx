@@ -1,5 +1,5 @@
+import { categories } from "@fake-data/data";
 import React from "react";
-import { categories } from "../../../@fake-data/data";
 import CategoryItem from "../CategoryItems/CategoryItem";
 import { Container } from "./Categories.styled";
 

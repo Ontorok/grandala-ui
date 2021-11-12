@@ -1,8 +1,8 @@
 import { Add, Remove } from "@mui/icons-material";
+import Footer from "parts/Footer/Footer";
+import Newsletter from "parts/Newsletter/Newsletter";
 import React from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../../parts/Footer/Footer";
-import Newsletter from "../../parts/Newsletter/Newsletter";
 import {
   AddContainer,
   Amount,

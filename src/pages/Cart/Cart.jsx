@@ -1,8 +1,8 @@
 import { Add, Remove } from "@mui/icons-material";
+import { devices } from "mediaQuery/devices";
+import Footer from "parts/Footer/Footer";
 import React from "react";
 import styled from "styled-components";
-import { devices } from "../../mediaQuery/devices";
-import Footer from "../../parts/Footer/Footer";
 
 const Container = styled.div``;
 

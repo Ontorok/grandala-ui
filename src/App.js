@@ -1,11 +1,11 @@
+import Cart from "pages/Cart/Cart";
+import Home from "pages/Home/Home";
+import Login from "pages/Login/Login";
+import ProductDetails from "pages/ProductDetail/ProductDetails";
+import ProductList from "pages/ProductList/ProductList";
+import Register from "pages/Register/Register";
+import Layout from "parts/Layout/Layout";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Cart from "./pages/Cart/Cart";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import ProductDetails from "./pages/ProductDetail/ProductDetails";
-import ProductList from "./pages/ProductList/ProductList";
-import Register from "./pages/Register/Register";
-import Layout from "./parts/Layout/Layout";
 
 export default function App() {
   return (

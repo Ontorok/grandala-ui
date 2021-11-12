@@ -1,7 +1,7 @@
+import Footer from "parts/Footer/Footer";
+import Newsletter from "parts/Newsletter/Newsletter";
+import Products from "parts/Product/Products/Products";
 import React from "react";
-import Footer from "../../parts/Footer/Footer";
-import Newsletter from "../../parts/Newsletter/Newsletter";
-import Products from "../../parts/Product/Products/Products";
 import {
   Container,
   Filter,

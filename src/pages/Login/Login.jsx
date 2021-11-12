@@ -1,6 +1,6 @@
+import { devices } from "mediaQuery/devices";
 import React, { Fragment } from "react";
 import styled from "styled-components";
-import { devices } from "../../mediaQuery/devices";
 
 const Container = styled.div`
   width: 100vw;

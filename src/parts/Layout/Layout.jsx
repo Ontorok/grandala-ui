@@ -1,6 +1,6 @@
+import Announcement from "parts/Announcement/Announcement";
+import Navbar from "parts/Navbar/Navbar";
 import React from "react";
-import Announcement from "../Announcement/Announcement";
-import Navbar from "../Navbar/Navbar";
 import { Container } from "./Layout.styled";
 
 const Layout = (props) => {
