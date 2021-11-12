@@ -1,12 +1,23 @@
 import { popularProducts } from "@fake-data/data";
 import React, { useEffect } from "react";
-import ProductService from "services/productService";
 import Product from "../ProductItem/ProductItem";
 import { Container } from "./Products.styled";
 
 const Products = () => {
   useEffect(() => {
-    ProductService.getProducts(1).then((res) => console.log(res));
+    const abortControler = new AbortController();
+
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      signal: abortControler.signal
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+    return () => {
+      abortControler.abort();
+    };
   }, []);
   return (
     <Container>
