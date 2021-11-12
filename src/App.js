@@ -1,18 +1,15 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Announcement from "./components/Common/Announcement";
-import Navbar from "./components/Common/Navbar";
-import Cart from "./pages/Cart";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import ProductDetails from "./pages/ProductDetails";
-import ProductList from "./pages/ProductList";
-import Register from "./pages/Register";
+import Cart from "./pages/Cart/Cart";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import ProductDetails from "./pages/ProductDetail/ProductDetails";
+import ProductList from "./pages/ProductList/ProductList";
+import Register from "./pages/Register/Register";
+import Layout from "./parts/Layout/Layout";
 
 export default function App() {
   return (
-    <div>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Routes>
         <Route path="/" element={<Navigate to="/shopping-cart-ui" />} />
         <Route path="/shopping-cart-ui" element={<Home />} />
@@ -25,6 +22,6 @@ export default function App() {
           element={<ProductDetails />}
         />
       </Routes>
-    </div>
+    </Layout>
   );
 }
