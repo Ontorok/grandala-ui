@@ -1,6 +1,6 @@
 import { sliderItems } from "@fake-data/data";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Arrow,
   Button,
@@ -25,9 +25,13 @@ const Slider = () => {
     }
   };
 
-  // setTimeout(() => {
-  //   onSlideChange("right");
-  // }, 5000);
+  useEffect(() => {
+    const slider = setTimeout(() => {
+      setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
+    }, 3000);
+
+    return () => clearTimeout(slider);
+  }, [slideIndex]);
 
   return (
     <Container>

@@ -12,8 +12,7 @@ const Products = () => {
 
     const fetchUser = async () => {
       try {
-        const data = await ProductService.getProducts(token);
-        console.log(data);
+        await ProductService.getProducts(token);
       } catch (error) {
         console.log(error.message, error.response.status);
       }

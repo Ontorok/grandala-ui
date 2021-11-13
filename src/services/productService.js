@@ -3,7 +3,7 @@ import axios from 'axios';
 const ProductService = {
   getProducts: async function (token) {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/userss", {
+      const response = await axios.get("https://jsonplaceholder.typicode.com/users", {
         cancelToken: token
 
       });
