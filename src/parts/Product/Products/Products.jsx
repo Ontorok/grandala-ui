@@ -1,24 +1,31 @@
 import { popularProducts } from "@fake-data/data";
+import axios from "axios";
 import React, { useEffect } from "react";
+import { ProductService } from "services";
 import Product from "../ProductItem/ProductItem";
 import { Container } from "./Products.styled";
 
 const Products = () => {
   useEffect(() => {
-    const abortControler = new AbortController();
+    const source = axios.CancelToken.source();
+    const token = source.token;
 
-    fetch("https://jsonplaceholder.typicode.com/posts/1", {
-      signal: abortControler.signal
-    })
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchUser = async () => {
+      try {
+        const data = await ProductService.getProducts(token);
         console.log(data);
-      });
+      } catch (error) {
+        console.log(error.message, error.response.status);
+      }
+    };
+
+    fetchUser();
 
     return () => {
-      abortControler.abort();
+      source.cancel();
     };
   }, []);
+
   return (
     <Container>
       {popularProducts.map((item) => (

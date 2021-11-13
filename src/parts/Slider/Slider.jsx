@@ -25,9 +25,9 @@ const Slider = () => {
     }
   };
 
-  setTimeout(() => {
-    onSlideChange("right");
-  }, 5000);
+  // setTimeout(() => {
+  //   onSlideChange("right");
+  // }, 5000);
 
   return (
     <Container>
