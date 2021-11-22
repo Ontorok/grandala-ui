@@ -1,15 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
 const ProductService = {
-  getProducts: async function (token) {
+  fetchProducts: async function (token) {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/users", {
+      const response = await axios.get("http://localhost:5000/api/product", {
         cancelToken: token
-
       });
-      return response.data
+      return response.data;
     } catch (error) {
-      throw error
+      throw error;
     }
   }
 };
