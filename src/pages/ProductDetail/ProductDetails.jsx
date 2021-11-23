@@ -1,3 +1,11 @@
+/**
+ * Title: Product Details
+ * Description: Single product details
+ * Author: Nasir Ahmed
+ * Date: 05-November-2021
+ * Modified: 23-November-2021
+ **/
+
 import { Add, Remove } from "@mui/icons-material";
 import axios from "axios";
 import Footer from "parts/Footer/Footer";
@@ -132,3 +140,7 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+/** Change Log
+ * 23-Nov-2021 : add quantity change, size select, color select functionality
+ **/
