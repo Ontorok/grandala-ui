@@ -10,7 +10,7 @@ import Footer from "parts/Footer/Footer";
 import Newsletter from "parts/Newsletter/Newsletter";
 import Products from "parts/Product/Products/Products";
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   Container,
   Filter,
@@ -23,7 +23,7 @@ import {
 
 const ProductList = () => {
   //#region HOOKS
-  const location = useLocation();
+  const params = useParams();
   //#endregion
 
   //#region STATES
@@ -53,7 +53,7 @@ const ProductList = () => {
 
   //#endregion
 
-  const category = location.pathname.split("/")[2];
+  const { category } = params;
   return (
     <Container>
       <Title>{category.toUpperCase()}</Title>

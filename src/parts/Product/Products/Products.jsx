@@ -15,7 +15,6 @@ import { Container } from "./Products.styled";
 const Products = (props) => {
   //#region PROPS
   const { category, filters, sort } = props;
-  console.log(sort);
   //#endregion
 
   //#region HOOKS
