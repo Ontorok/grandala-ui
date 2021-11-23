@@ -6,7 +6,6 @@
  * Modified: 22-November-2021
  **/
 
-import { popularProducts } from "@fake-data/data";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { http } from "services/config";
@@ -16,7 +15,7 @@ import { Container } from "./Products.styled";
 const Products = (props) => {
   //#region PROPS
   const { category, filters, sort } = props;
-
+  console.log(sort);
   //#endregion
 
   //#region HOOKS
@@ -37,20 +36,21 @@ const Products = (props) => {
   //#endregion
 
   //#region EFFECTS
+  /**
+   * fetch products from db by caterogy wise
+   **/
   useEffect(() => {
     const source = axios.CancelToken.source();
     const token = source.token;
 
     const fetchProducts = async () => {
       try {
-        const products = await http.get("/product", {
-          params: {
-            category: "Polo",
-            latest: true
-          },
-          cancelToken: token
-        });
-        console.log(products.data.data);
+        const products = await http.get(
+          category ? `/product?category=${category}` : "/product",
+          {
+            cancelToken: token
+          }
+        );
         setProducts(products.data.data);
       } catch (error) {
         console.log(error.message);
@@ -63,13 +63,50 @@ const Products = (props) => {
       source.cancel();
     };
   }, [category]);
+
+  /**
+   * set filtered products by filters
+   **/
+  useEffect(() => {
+    category &&
+      setFilteredProducts(
+        products.filter((item) =>
+          Object.entries(filters).every(([key, value]) =>
+            item[key].includes(value)
+          )
+        )
+      );
+  }, [category, filters, products]);
+
+  /**
+   * sorted poruducts
+   **/
+  useEffect(() => {
+    if (sort === "newest") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.createdAt - b.createdAt)
+      );
+    }
+    if (sort === "asc") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => a.price - b.price)
+      );
+    }
+    if (sort === "desc") {
+      setFilteredProducts((prev) =>
+        [...prev].sort((a, b) => b.price - a.price)
+      );
+    }
+  }, [sort]);
   //#endregion
 
   return (
     <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
+      {category
+        ? filteredProducts.map((item) => <Product item={item} key={item._id} />)
+        : products
+            .slice(0, 8)
+            .map((item) => <Product item={item} key={item._id} />)}
     </Container>
   );
 };

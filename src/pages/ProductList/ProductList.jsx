@@ -56,7 +56,7 @@ const ProductList = () => {
   const category = location.pathname.split("/")[2];
   return (
     <Container>
-      <Title>Dresses</Title>
+      <Title>{category.toUpperCase()}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -66,12 +66,13 @@ const ProductList = () => {
             onChange={handleFiltersChange}
           >
             <Option disabled>Color</Option>
-            <Option>White</Option>
-            <Option>Black</Option>
-            <Option>Red</Option>
-            <Option>Blue</Option>
-            <Option>Yellow</Option>
-            <Option>Green</Option>
+            <Option value="white">White</Option>
+            <Option value="black">Black</Option>
+            <Option value="red">Red</Option>
+            <Option value="blue">Blue</Option>
+            <Option value="yellow">Yellow</Option>
+            <Option value="green">Green</Option>
+            <Option value="ash">Ash</Option>
           </Select>
           <Select
             name="size"
@@ -79,12 +80,12 @@ const ProductList = () => {
             onChange={handleFiltersChange}
           >
             <Option disabled>Size</Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
-            <Option>XXL</Option>
+            <Option value="XS">XS</Option>
+            <Option value="S">S</Option>
+            <Option value="M">M</Option>
+            <Option value="L">L</Option>
+            <Option value="XL">XL</Option>
+            <Option value="XXL">XXL</Option>
           </Select>
         </Filter>
         <Filter>
@@ -92,7 +93,7 @@ const ProductList = () => {
           <Select defaultValue={"Newest"} onChange={handleSortChange}>
             <Option value="newest">Newest</Option>
             <Option value="asc">Price (asc)</Option>
-            <Option value="descs">Price (desc)</Option>
+            <Option value="desc">Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>

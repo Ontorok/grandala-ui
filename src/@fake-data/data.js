@@ -29,20 +29,20 @@ export const categories = [
   {
     id: 1,
     img: "https://i.ibb.co/2vwkzwt/jacket.jpg",
-    title: "SHIRT STYLE",
-    name: "shirt"
+    title: "MAN",
+    name: "men"
   },
   {
     id: 2,
-    img: "https://i.ibb.co/PrjPKns/loungewere.jpg",
-    title: "LOUNGEWEAR LOVE",
-    name: "loungewear"
+    img: "https://i.ibb.co/XsjfD9R/Png-Item-223925.png",
+    title: "WOMEN",
+    name: "women"
   },
   {
     id: 3,
-    img: "https://i.ibb.co/bJmS5WJ/shirt.jpg",
-    title: "LIGHT JACKETS",
-    name: "jacket"
+    img: "https://i.ibb.co/X5f9zC0/5d6b93074c0953561646bc78156ec9ef.jpg",
+    title: "KIDS",
+    name: "kids"
   }
 ];
 
@@ -74,7 +74,7 @@ export const popularProducts = [
   },
   {
     id: 6,
-    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    img: "https://i.ibb.co/mhFMJZ1/kids.png",
     name: "Gents Hat"
   },
   {
