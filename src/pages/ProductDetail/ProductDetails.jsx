@@ -11,7 +11,9 @@ import axios from "axios";
 import Footer from "parts/Footer/Footer";
 import Newsletter from "parts/Newsletter/Newsletter";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addProduct } from "redux/cartRedux";
 import { http } from "services/config";
 import {
   AddContainer,
@@ -37,6 +39,7 @@ import {
 const ProductDetails = () => {
   //#region HOOKS
   const { id } = useParams();
+  const dispatch = useDispatch();
   //#endregion
 
   //#region STATES
@@ -57,10 +60,13 @@ const ProductDetails = () => {
 
     const fetchProducts = async () => {
       try {
-        const product = await http.get(`/product/find/${id}`, {
+        const productReponse = await http.get(`/product/find/${id}`, {
           cancelToken: token
         });
-        setProduct(product.data.data);
+        const product = productReponse.data.data;
+        setProduct(product);
+        setColor(product.color[0]);
+        setSize(product.size[0]);
         setIsPageLoaded(true);
       } catch (error) {
         console.log(error.message);
@@ -85,7 +91,7 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
-    console.log({ color, size, quantity });
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
   //#endregion
   return (
