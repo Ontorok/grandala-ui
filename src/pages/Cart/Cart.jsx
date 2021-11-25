@@ -1,6 +1,10 @@
 import { Add, Remove } from "@mui/icons-material";
+import logo from "assets/logo.jpg";
 import Footer from "parts/Footer/Footer";
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import { http } from "services/config";
 import {
   Bottom,
   Button,
@@ -33,6 +37,49 @@ import {
 } from "./Cart.styled";
 
 const Cart = () => {
+  //#region HOOKS
+  const cart = useSelector(({ cart }) => cart);
+  //#endregion
+
+  //#region STATES
+  const [stripeToken, setStripeToken] = useState(null);
+  //#endregion
+
+  //#region LOCAL VARIABLES
+  const estimatedShippingCost = 20;
+  const discount = 5;
+  const KEY = process.env.REACT_APP_STRIPE;
+  //#endregion
+
+  //#region EVENTS
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+  //#endregion Bearer
+
+  //#region EFFECTS
+  React.useEffect(() => {
+    const makeRequest = async () => {
+      const data = {
+        tokenId: stripeToken.id,
+        amount: cart.total * 100
+      };
+      try {
+        const res = await http.post("/checkout/payment", data, {
+          headers: {
+            Authorization: `Bearer ${KEY}`
+          }
+        });
+        console.log(res.data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total, KEY]);
+  //#endregion
+
   return (
     <Container>
       <Wrapper>
@@ -40,84 +87,78 @@ const Cart = () => {
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
-            <TopText>Shopping Bag (2)</TopText>
+            <TopText>Shopping Bag ({cart.quantity})</TopText>
             <TopText>Your wishlist (0)</TopText>
           </TopTexts>
           <TopButton btnType="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetail>
-                <Image src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png" />
-                <Detail>
-                  <ProductName>
-                    <b>Product: </b> Apext Shoes
-                  </ProductName>
-                  <ProductId>
-                    <b>ID: </b> 123456789
-                  </ProductId>
-                  <ProductColor bgColor="#A78D74" />
-                  <ProductSize>
-                    <b>Size: </b> 37.5
-                  </ProductSize>
-                </Detail>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 40</ProductPrice>
-              </PriceDetail>
-            </Product>
+            {cart.products.map((product, index) => (
+              <React.Fragment key={product._id}>
+                <Product>
+                  <ProductDetail>
+                    <Image src={product.img} />
+                    <Detail>
+                      <ProductName>
+                        <b>Product: </b> {product.title}
+                      </ProductName>
+                      <ProductId>
+                        <b>ID: </b> {product._id}
+                      </ProductId>
+                      <ProductColor bgColor={product.color} />
+                      <ProductSize>
+                        <b>Size: </b> {product.size}
+                      </ProductSize>
+                    </Detail>
+                  </ProductDetail>
+                  <PriceDetail>
+                    <ProductAmountContainer>
+                      <Remove />
+                      <ProductAmount>{product.quantity}</ProductAmount>
+                      <Add />
+                    </ProductAmountContainer>
+                    <ProductPrice>
+                      $ {product.quantity * product.price}
+                    </ProductPrice>
+                  </PriceDetail>
+                </Product>
+              </React.Fragment>
+            ))}
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png" />
-                <Detail>
-                  <ProductName>
-                    <b>Product: </b> Apext Shoes
-                  </ProductName>
-                  <ProductId>
-                    <b>ID: </b> 123456789
-                  </ProductId>
-                  <ProductColor bgColor="#7A7E7A" />
-                  <ProductSize>
-                    <b>Size: </b> 37.5
-                  </ProductSize>
-                </Detail>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 40</ProductPrice>
-              </PriceDetail>
-            </Product>
           </Info>
+
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 10.5</SummaryItemPrice>
+              <SummaryItemPrice>$ {estimatedShippingCost}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ 5.5</SummaryItemPrice>
+              <SummaryItemPrice>$ - {discount}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ 85</SummaryItemPrice>
+              <SummaryItemPrice>
+                $ {cart.total + estimatedShippingCost - discount}
+              </SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            <StripeCheckout
+              image={logo}
+              billingAddress
+              shippingAddress
+              description={`Your cart total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <Button>CHECKOUT NOW</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
