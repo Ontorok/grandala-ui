@@ -3,6 +3,7 @@ import logo from "assets/logo.jpg";
 import Footer from "parts/Footer/Footer";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
 import { http } from "services/config";
 import {
@@ -39,6 +40,7 @@ import {
 const Cart = () => {
   //#region HOOKS
   const cart = useSelector(({ cart }) => cart);
+  const navigate = useNavigate();
   //#endregion
 
   //#region STATES
@@ -65,19 +67,20 @@ const Cart = () => {
         amount: cart.total * 100
       };
       try {
-        const res = await http.post("/checkout/payment", data, {
-          headers: {
-            Authorization: `Bearer ${KEY}`
+        const res = await http.post("/checkout/payment", data);
+        navigate("/success", {
+          state: {
+            stripeData: res.data,
+            productData: cart
           }
         });
-        console.log(res.data);
       } catch (err) {
         console.log(err.message);
       }
     };
 
     stripeToken && makeRequest();
-  }, [stripeToken, cart.total, KEY]);
+  }, [stripeToken, cart.total, navigate, cart]);
   //#endregion
 
   return (
