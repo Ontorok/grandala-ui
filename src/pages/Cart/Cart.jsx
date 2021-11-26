@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
-import { http } from "services/config";
+import { userRequest } from "services/config";
 import {
   Bottom,
   Button,
@@ -61,13 +61,13 @@ const Cart = () => {
 
   //#region EFFECTS
   React.useEffect(() => {
-    const makeRequest = async () => {
+    const makePayment = async () => {
       const data = {
         tokenId: stripeToken.id,
         amount: cart.total * 100
       };
       try {
-        const res = await http.post("/checkout/payment", data);
+        const res = await userRequest.post("/checkout/payment", data);
         navigate("/success", {
           state: {
             stripeData: res.data,
@@ -79,7 +79,7 @@ const Cart = () => {
       }
     };
 
-    stripeToken && makeRequest();
+    stripeToken && makePayment();
   }, [stripeToken, cart.total, navigate, cart]);
   //#endregion
 

@@ -8,7 +8,7 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { http } from "services/config";
+import { publicRequest } from "services/config";
 import Product from "../ProductItem/ProductItem";
 import { Container } from "./Products.styled";
 
@@ -44,7 +44,7 @@ const Products = (props) => {
 
     const fetchProducts = async () => {
       try {
-        const products = await http.get(
+        const products = await publicRequest.get(
           category ? `/product?category=${category}` : "/product",
           {
             cancelToken: token

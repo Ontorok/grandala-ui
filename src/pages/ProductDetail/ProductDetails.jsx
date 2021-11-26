@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addProduct } from "redux/cartRedux";
-import { http } from "services/config";
+import { publicRequest } from "services/config";
 import {
   AddContainer,
   Amount,
@@ -60,7 +60,7 @@ const ProductDetails = () => {
 
     const fetchProducts = async () => {
       try {
-        const productReponse = await http.get(`/product/find/${id}`, {
+        const productReponse = await publicRequest.get(`/product/find/${id}`, {
           cancelToken: token
         });
         const product = productReponse.data.data;

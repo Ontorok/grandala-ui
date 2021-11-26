@@ -7,11 +7,12 @@
  **/
 
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { userRequest } from "services/config";
 
 const Success = () => {
   const { productData, stripeData } = useLocation().state;
+  const navigate = useNavigate();
 
   const [orderId, setOrderId] = useState(null);
 
@@ -41,12 +42,29 @@ const Success = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        flexDirection: "column"
       }}
     >
-      {orderId
-        ? `Order has been created successfully. Your order number is ${orderId}`
-        : `Successfull. Your order is being prepared...`}
+      <div>
+        {orderId
+          ? `Order has been created successfully. Your order number is ${orderId}`
+          : `Successfull. Your order is being prepared...`}
+      </div>
+      <div>
+        <button
+          style={{
+            padding: 10,
+            marginTop: 20,
+            borderRadius: 5,
+            backgroundColor: "black",
+            color: "white"
+          }}
+          onClick={() => navigate("/")}
+        >
+          Go to Homepage
+        </button>
+      </div>
     </div>
   );
 };
