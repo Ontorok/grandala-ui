@@ -13,7 +13,7 @@ import Newsletter from "parts/Newsletter/Newsletter";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addProduct } from "redux/cartRedux";
+import { addProduct } from "redux/slices/cartSlice";
 import { publicRequest } from "services/config";
 import {
   AddContainer,
