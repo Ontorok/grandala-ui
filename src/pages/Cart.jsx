@@ -160,7 +160,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const { cart, user } = useSelector((state) => state);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
 
@@ -173,16 +173,41 @@ const Cart = () => {
       try {
         const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
-          amount: 500,
+          amount: 500
         });
+        const orderPayload = {
+          userId: user.currentUser._id,
+          products: cart.products.map((prod) => ({
+            productId: prod._id,
+            quantity: prod.quantity
+          })),
+          amount: cart.total,
+          address: res.data.billing_details.address
+        };
         history.push("/success", {
-          stripeData: res.data,
-          products: cart,
+          orderPayload
         });
       } catch {}
     };
     stripeToken && makeRequest();
-  }, [stripeToken, cart, history]);
+  }, [stripeToken, cart, history, user.currentUser._id]);
+
+  const readyOrderpay = () => {
+    console.log(cart);
+    const orderPayload = {
+      userId: user.currentUser._id,
+      products: cart.products.map((prod) => ({
+        productId: prod._id,
+        quantity: prod.quantity
+      })),
+      amount: cart.total,
+      address: {
+        city: "Dhaka",
+        country: "Bangladesh"
+      }
+    };
+    console.log(orderPayload);
+  };
   return (
     <Container>
       <Navbar />
@@ -195,7 +220,9 @@ const Cart = () => {
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <TopButton type="filled" onClick={readyOrderpay}>
+            CHECKOUT NOW
+          </TopButton>
         </Top>
         <Bottom>
           <Info>
